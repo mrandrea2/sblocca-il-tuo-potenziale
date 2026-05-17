@@ -283,6 +283,36 @@ p {
   margin-bottom: 0;
 }
 
+.book-section {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(244, 183, 64, 0.22));
+  box-shadow: var(--shadow);
+}
+
+.book-badge {
+  display: grid;
+  width: 5.2rem;
+  height: 5.2rem;
+  place-items: center;
+  color: white;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+  font-weight: 950;
+  transform: rotate(-4deg);
+}
+
+.book-copy p {
+  max-width: 42rem;
+  margin-bottom: 0;
+  color: #3a455f;
+}
+
 .section-heading {
   max-width: 46rem;
   margin-bottom: 1.7rem;
@@ -556,9 +586,14 @@ p {
 @media (max-width: 640px) {
   .topbar,
   .footer,
+  .book-section,
   .contact {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .book-section {
+    display: flex;
   }
 
   .topnav {
