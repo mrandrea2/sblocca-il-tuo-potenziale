@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sblocca il tuo Potenziale</title>
+    <meta
+      name="description"
+      content="Web app gratuita per studenti: check motivazionale, missioni di studio e guida IA educativa."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Vai alla home">
+        <span class="brand-mark">SP</span>
+        <span>Sblocca il tuo Potenziale</span>
+      </a>
+      <nav class="topnav" aria-label="Navigazione principale">
+        <a href="#check">Check</a>
+        <a href="#missioni">Missioni</a>
+        <a href="#guida-ia">Guida IA</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Mentoring scolastico gratuito</p>
+          <h1>Allenati a studiare con piu' motivazione, metodo e fiducia.</h1>
+          <p class="lead">
+            Fai un check veloce, scopri da dove partire e scegli una missione pratica. Non serve registrarsi, non ci
+            sono voti e non ci sono risposte giuste o sbagliate.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#check">Inizia il check</a>
+            <a class="button secondary" href="#missioni">Scegli una missione</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Anteprima percorso">
+          <div class="quest-card active">
+            <span class="quest-level">Livello 1</span>
+            <h2>Check Motivazione</h2>
+            <p>21 domande per capire quale sfida affrontare oggi.</p>
+          </div>
+          <div class="quest-row">
+            <div>
+              <strong>8</strong>
+              <span>missioni</span>
+            </div>
+            <div>
+              <strong>0</strong>
+              <span>login</span>
+            </div>
+            <div>
+              <strong>IA</strong>
+              <span>guida</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="notice section compact">
+        <div>
+          <h2>Prima di iniziare</h2>
+          <p>
+            Questa app offre supporto educativo e motivazionale. Non fornisce diagnosi, terapia o consulenza
+            psicologica personalizzata. Se vivi un disagio intenso, parlane con un adulto di fiducia o con un
+            professionista.
+          </p>
+        </div>
+      </section>
+
+      <section id="check" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Check iniziale e monitoraggio</p>
+          <h2>Scopri la tua sfida di oggi</h2>
+          <p>
+            Puoi rifarlo quando vuoi: prima di una verifica, a inizio settimana o quando senti che qualcosa e'
+            cambiato. Le risposte non vengono salvate.
+          </p>
+        </div>
+
+        <form id="quizForm" class="quiz" aria-describedby="quiz-help">
+          <p id="quiz-help" class="helper">
+            Scala: 1 = mai, 2 = raramente, 3 = a volte, 4 = spesso, 5 = sempre.
+          </p>
+          <div id="questions" class="questions"></div>
+          <div class="quiz-actions">
+            <button class="button primary" type="submit">Mostra risultato</button>
+            <button class="button ghost" type="reset">Cancella risposte</button>
+          </div>
+        </form>
+
+        <article id="result" class="result-card hidden" aria-live="polite"></article>
+      </section>
+
+      <section id="missioni" class="section band">
+        <div class="section-heading">
+          <p class="eyebrow">Scegli il tuo allenamento</p>
+          <h2>Missioni</h2>
+          <p>
+            Ogni missione contiene un esercizio originale, ispirato ai temi del progetto, pensato per diventare un
+            piccolo passo concreto.
+          </p>
+        </div>
+        <div id="missionsGrid" class="missions-grid"></div>
+      </section>
+
+      <section id="mission-detail" class="section mission-detail hidden" aria-live="polite"></section>
+
+      <section id="guida-ia" class="section ai-section">
+        <div class="section-heading">
+          <p class="eyebrow">Guida IA dimostrativa</p>
+          <h2>Racconta cosa ti blocca</h2>
+          <p>
+            La guida usa una funzione server privata: la chiave IA non e' visibile nel browser e le risposte non vengono
+            salvate dall'app.
+          </p>
+        </div>
+        <div class="ai-layout">
+          <div class="chat-panel">
+            <label for="aiInput">Scrivi una difficolta' scolastica</label>
+            <textarea
+              id="aiInput"
+              rows="5"
+              placeholder="Esempio: domani ho una verifica e non riesco a iniziare..."
+            ></textarea>
+            <button id="aiButton" class="button primary" type="button">Chiedi una strategia</button>
+          </div>
+          <div id="aiResponse" class="ai-response">
+            <h3>Consiglio generato da IA</h3>
+            <p>
+              Le risposte IA possono contenere errori. Non inserire dati personali e usa i suggerimenti come spunti
+              educativi, non come consulenza psicologica.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="section legal-grid">
+        <article>
+          <h2>Privacy</h2>
+          <p>
+            L'app e' progettata per ridurre al minimo la raccolta di dati: non richiede registrazione, non crea profili
+            personali e non conserva in modo permanente le risposte ai questionari.
+          </p>
+          <p>
+            Non inserire nome, cognome, email, scuola, classe, indirizzo o informazioni private nella chat o negli
+            esercizi. Se hai meno di 14 anni, usa l'app con il supporto di un genitore, tutore o adulto di fiducia.
+          </p>
+        </article>
+        <article>
+          <h2>Cookie</h2>
+          <p>
+            La versione base usa solo elementi tecnici necessari al funzionamento. Non sono previsti cookie di
+            profilazione, marketing o tracciamento pubblicitario.
+          </p>
+          <p>
+            Se in futuro verranno introdotti strumenti di analisi non tecnici, andra' richiesto un consenso esplicito
+            tramite banner.
+          </p>
+        </article>
+        <article>
+          <h2>Disclaimer IA</h2>
+          <p>
+            Alcuni suggerimenti possono essere generati con il supporto dell'intelligenza artificiale. Le risposte
+            possono essere incomplete, imprecise o non adatte alla tua situazione.
+          </p>
+          <p>
+            Questa app non sostituisce psicologi, medici, docenti, genitori o altri professionisti. In caso di disagio
+            intenso o pericolo, chiedi subito aiuto a un adulto di fiducia o ai servizi di emergenza.
+          </p>
+        </article>
+      </section>
+
+      <section id="contatti" class="section contact">
+        <div>
+          <p class="eyebrow">Supporto personalizzato</p>
+          <h2>Vuoi una consulenza?</h2>
+          <p>
+            Puoi contattare <strong>Andrea Bertelli, docente e psicologo</strong>, per un supporto professionale.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:humanperformancelab.app@gmail.com">Scrivi una email</a>
+          <a class="button secondary" href="https://andrea-bertelli.vercel.app/" target="_blank" rel="noreferrer">
+            Visita il sito
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Sblocca il tuo Potenziale</span>
+      <span>
+        <a href="privacy.html">Privacy</a> · <a href="cookie.html">Cookie</a> ·
+        <a href="disclaimer.html">Disclaimer</a>
+      </span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
